@@ -10,6 +10,7 @@
 		06101BB41CD702260045F946 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06101BB31CD702260045F946 /* APIManager.swift */; };
 		06101BB71CD725040045F946 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06101BB61CD725040045F946 /* Constants.swift */; };
 		06101BB91CD728320045F946 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06101BB81CD728320045F946 /* MusicVideo.swift */; };
+		0626F0931CD753D6008B4B06 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0626F0921CD753D6008B4B06 /* Reachability.m */; };
 		064F2AA21CD62CF40051E41F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F2AA11CD62CF40051E41F /* AppDelegate.swift */; };
 		064F2AA41CD62CF40051E41F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F2AA31CD62CF40051E41F /* ViewController.swift */; };
 		064F2AA71CD62CF40051E41F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F2AA51CD62CF40051E41F /* Main.storyboard */; };
@@ -21,6 +22,9 @@
 		06101BB31CD702260045F946 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		06101BB61CD725040045F946 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		06101BB81CD728320045F946 /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		0626F0901CD753D6008B4B06 /* MusicVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicVideo-Bridging-Header.h"; sourceTree = "<group>"; };
+		0626F0911CD753D6008B4B06 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		0626F0921CD753D6008B4B06 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		064F2A9E1CD62CF40051E41F /* MusicVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064F2AA11CD62CF40051E41F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		064F2AA31CD62CF40051E41F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,16 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		0626F08F1CD7525F008B4B06 /* Obj-c */ = {
+			isa = PBXGroup;
+			children = (
+				0626F0911CD753D6008B4B06 /* Reachability.h */,
+				0626F0921CD753D6008B4B06 /* Reachability.m */,
+				0626F0901CD753D6008B4B06 /* MusicVideo-Bridging-Header.h */,
+			);
+			name = "Obj-c";
+			sourceTree = "<group>";
+		};
 		064F2A951CD62CF40051E41F = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +82,7 @@
 		064F2AA01CD62CF40051E41F /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
+				0626F08F1CD7525F008B4B06 /* Obj-c */,
 				06101BB51CD724E00045F946 /* Utils */,
 				064F2AB51CD6311D0051E41F /* Supporting Files */,
 				064F2AB31CD630C00051E41F /* Model */,
@@ -188,6 +203,7 @@
 				064F2AA41CD62CF40051E41F /* ViewController.swift in Sources */,
 				06101BB91CD728320045F946 /* MusicVideo.swift in Sources */,
 				064F2AA21CD62CF40051E41F /* AppDelegate.swift in Sources */,
+				0626F0931CD753D6008B4B06 /* Reachability.m in Sources */,
 				06101BB71CD725040045F946 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,10 +319,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MusicVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatiwat.MusicVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicVideo/MusicVideo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -314,10 +333,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MusicVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatiwat.MusicVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicVideo/MusicVideo-Bridging-Header.h";
 			};
 			name = Release;
 		};
