@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06101BB41CD702260045F946 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06101BB31CD702260045F946 /* APIManager.swift */; };
 		064F2AA21CD62CF40051E41F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F2AA11CD62CF40051E41F /* AppDelegate.swift */; };
 		064F2AA41CD62CF40051E41F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F2AA31CD62CF40051E41F /* ViewController.swift */; };
 		064F2AA71CD62CF40051E41F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F2AA51CD62CF40051E41F /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06101BB31CD702260045F946 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		064F2A9E1CD62CF40051E41F /* MusicVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064F2AA11CD62CF40051E41F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		064F2AA31CD62CF40051E41F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		064F2AB31CD630C00051E41F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06101BB31CD702260045F946 /* APIManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06101BB41CD702260045F946 /* APIManager.swift in Sources */,
 				064F2AA41CD62CF40051E41F /* ViewController.swift in Sources */,
 				064F2AA21CD62CF40051E41F /* AppDelegate.swift in Sources */,
 			);
