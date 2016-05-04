@@ -18,20 +18,9 @@ class MusicVideoTVC: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.reachabilityStatusChanges), name: "ReachStatusChanged", object: nil)
         reachabilityStatusChanges()
         
-        //Call API
-        let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=20/json",completion: didLoadData)
     }
     
     func didLoadData(videos: [Videos]) {
-        
-        //let alert = UIAlertController(title: (result), message: nil, preferredStyle: .Alert)
-        //let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-        //do something if you want
-        //}
-        
-        //alert.addAction(okAction)
-        //self.presentViewController(alert, animated: true, completion: nil)
         
         self.videos = videos
         
@@ -46,16 +35,48 @@ class MusicVideoTVC: UITableViewController {
     func reachabilityStatusChanges() {
         
         switch reachabilityStatus {
-        case NOACCESS: view.backgroundColor = UIColor.redColor()
-        //displayLabel.text = "No Internet"
-        case WIFI: view.backgroundColor = UIColor.greenColor()
-        //displayLabel.text = "Reachable with WIFI"
-        case WWAN: view.backgroundColor = UIColor.yellowColor()
-        //displayLabel.text = "Reachable with Cellular"
+        case NOACCESS:
+            //view.backgroundColor = UIColor.redColor()
+            // move back to main Queue
+            dispatch_async(dispatch_get_main_queue()) {
+                let alert = UIAlertController(title: "No Internet Access", message: "Please make sure you are connected to the Internet", preferredStyle: .Alert)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: { action -> () in
+                    print("Cancel")
+                })
+                
+                let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { action -> () in
+                    print("Delete")
+                })
+                
+                let okAction = UIAlertAction(title: "Ok", style: .Default, handler: { action -> () in
+                    print("Ok")
+                })
+                
+                alert.addAction(okAction)
+                alert.addAction(cancelAction)
+                alert.addAction(deleteAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
             
-        default: return
+        //case WIFI: view.backgroundColor = UIColor.greenColor()
+        //case WWAN: view.backgroundColor = UIColor.yellowColor()
+        default:
+            //view.backgroundColor = UIColor.greenColor()
+            if videos.count > 0 {
+                print("do not refresh API")
+            }
+            else {
+                runAPI()
+            }
         }
         
+    }
+    
+    func runAPI() {
+        //Call API
+        let api = APIManager()
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/json",completion: didLoadData)
     }
     
     // Is call just as the object is about to be deallocated
@@ -74,16 +95,16 @@ class MusicVideoTVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return videos.count
     }
+    
+    private struct storyboard {
+        static let cellReuseIdentifier = "cell"
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(storyboard.cellReuseIdentifier, forIndexPath: indexPath) as! MusicVideoTableViewCell
 
-        let video = videos[indexPath.row]
+        cell.video = videos[indexPath.row]
         
-        cell.textLabel?.text = ("\(indexPath.row + 1)")
-        
-        cell.detailTextLabel?.text = video.vName
-
         return cell
     }
 

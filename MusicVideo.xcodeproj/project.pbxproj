@@ -17,6 +17,7 @@
 		064F2AA71CD62CF40051E41F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F2AA51CD62CF40051E41F /* Main.storyboard */; };
 		064F2AA91CD62CF40051E41F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 064F2AA81CD62CF40051E41F /* Assets.xcassets */; };
 		064F2AAC1CD62CF40051E41F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F2AAA1CD62CF40051E41F /* LaunchScreen.storyboard */; };
+		06A24E061CD9B8F200E488D2 /* MusicVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A24E051CD9B8F200E488D2 /* MusicVideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		064F2AA81CD62CF40051E41F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		064F2AAB1CD62CF40051E41F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		064F2AAD1CD62CF40051E41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06A24E051CD9B8F200E488D2 /* MusicVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		064F2AB61CD632740051E41F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06A24E051CD9B8F200E488D2 /* MusicVideoTableViewCell.swift */,
 				06020B801CD789DB006EA4EA /* MusicVideoTVC.swift */,
 				064F2AA31CD62CF40051E41F /* ViewController.swift */,
 			);
@@ -205,6 +208,7 @@
 				06101BB41CD702260045F946 /* APIManager.swift in Sources */,
 				064F2AA41CD62CF40051E41F /* ViewController.swift in Sources */,
 				06101BB91CD728320045F946 /* MusicVideo.swift in Sources */,
+				06A24E061CD9B8F200E488D2 /* MusicVideoTableViewCell.swift in Sources */,
 				064F2AA21CD62CF40051E41F /* AppDelegate.swift in Sources */,
 				0626F0931CD753D6008B4B06 /* Reachability.m in Sources */,
 				06101BB71CD725040045F946 /* Constants.swift in Sources */,
