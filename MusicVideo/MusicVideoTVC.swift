@@ -9,14 +9,21 @@
 import UIKit
 
 class MusicVideoTVC: UITableViewController {
-
+    
     var videos = [Videos]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.reachabilityStatusChanges), name: "ReachStatusChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MusicVideoTVC.reachabilityStatusChanges), name: "ReachStatusChanged", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MusicVideoTVC.preferredFontChange), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         reachabilityStatusChanges()
+        
+    }
+    
+    func preferredFontChange() {
         
     }
     
@@ -82,6 +89,7 @@ class MusicVideoTVC: UITableViewController {
     // Is call just as the object is about to be deallocated
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReachStatusChanged", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
 
     // MARK: - Table view data source
@@ -98,6 +106,7 @@ class MusicVideoTVC: UITableViewController {
     
     private struct storyboard {
         static let cellReuseIdentifier = "cell"
+        static let segueIdentifier = "musicDetail"
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -143,14 +152,20 @@ class MusicVideoTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == storyboard.segueIdentifier {
+            if let indexpath = tableView.indexPathForSelectedRow {
+                let video = videos[indexpath.row]
+                if let dvc = segue.destinationViewController as? MusicVideoDetailVC {
+                    dvc.videos = video
+                }
+            }
+        }
     }
-    */
+ 
 
 }
