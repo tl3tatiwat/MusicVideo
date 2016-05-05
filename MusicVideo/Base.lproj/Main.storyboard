@@ -10,7 +10,7 @@
         <scene sceneID="UtE-ck-DeB">
             <objects>
                 <tableViewController id="R5G-vd-cMC" customClass="MusicVideoTVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="BaC-se-3w2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="BaC-se-3w2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -19,10 +19,10 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BHH-Fk-R6f" id="avU-4s-khc">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-ko-blj">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-ko-blj">
                                             <rect key="frame" x="8" y="8" width="140" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="140" id="dsT-z7-74A"/>
@@ -111,7 +111,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7s-Ov-HNy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7s-Ov-HNy">
                                 <rect key="frame" x="1" y="458" width="599" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="tF1-ES-MiJ"/>
@@ -132,7 +132,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HtH-Vl-LZ2" firstAttribute="top" secondItem="keL-2C-z7B" secondAttribute="bottom" id="1Ae-tn-KUc"/>
+                            <constraint firstItem="keL-2C-z7B" firstAttribute="leading" secondItem="GPG-qF-ugD" secondAttribute="leading" id="3Al-pe-SIp"/>
                             <constraint firstItem="RBS-7t-WkN" firstAttribute="leading" secondItem="GPG-qF-ugD" secondAttribute="leadingMargin" id="B4M-T8-N7g"/>
+                            <constraint firstAttribute="trailing" secondItem="keL-2C-z7B" secondAttribute="trailing" id="FpV-Mn-9Id"/>
+                            <constraint firstItem="keL-2C-z7B" firstAttribute="top" secondItem="6Hd-49-kPA" secondAttribute="bottom" id="HeS-2D-dXy"/>
                             <constraint firstItem="7D5-qC-D0l" firstAttribute="centerX" secondItem="keL-2C-z7B" secondAttribute="centerX" id="Jn1-z4-Lsy"/>
                             <constraint firstItem="keL-2C-z7B" firstAttribute="top" secondItem="7D5-qC-D0l" secondAttribute="bottom" id="L6A-ag-U0H"/>
                             <constraint firstItem="RBS-7t-WkN" firstAttribute="top" secondItem="keL-2C-z7B" secondAttribute="bottom" constant="1" id="N1B-YC-G7T"/>
@@ -148,6 +152,43 @@
                             <constraint firstAttribute="trailing" secondItem="keL-2C-z7B" secondAttribute="trailing" id="yGQ-1z-a1A"/>
                             <constraint firstItem="t7s-Ov-HNy" firstAttribute="bottom" secondItem="HtH-Vl-LZ2" secondAttribute="top" id="ycx-dA-ugc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3Al-pe-SIp"/>
+                                <exclude reference="FpV-Mn-9Id"/>
+                                <exclude reference="HeS-2D-dXy"/>
+                                <exclude reference="1Ae-tn-KUc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="RBS-7t-WkN"/>
+                                <exclude reference="Y5S-uf-1eS"/>
+                                <exclude reference="t7s-Ov-HNy"/>
+                                <exclude reference="7D5-qC-D0l"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Jn1-z4-Lsy"/>
+                                <exclude reference="VxW-CE-4xh"/>
+                                <exclude reference="m8b-eU-tdW"/>
+                                <exclude reference="B4M-T8-N7g"/>
+                                <exclude reference="N1B-YC-G7T"/>
+                                <exclude reference="NpY-8L-Tdk"/>
+                                <exclude reference="nLm-tB-Fgp"/>
+                                <exclude reference="rcJ-j7-Ody"/>
+                                <exclude reference="ycx-dA-ugc"/>
+                                <include reference="3Al-pe-SIp"/>
+                                <include reference="FpV-Mn-9Id"/>
+                                <include reference="HeS-2D-dXy"/>
+                                <exclude reference="L6A-ag-U0H"/>
+                                <exclude reference="WhD-u4-w9H"/>
+                                <exclude reference="aG9-IY-cDF"/>
+                                <exclude reference="gAv-vN-ndU"/>
+                                <exclude reference="yGQ-1z-a1A"/>
+                                <include reference="1Ae-tn-KUc"/>
+                                <exclude reference="pD0-c6-Q7W"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem systemItem="play" id="vXk-mc-gB5">
@@ -168,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvj-Uy-Bj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="88"/>
+            <point key="canvasLocation" x="2050" y="87"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zbu-az-ZHb">
