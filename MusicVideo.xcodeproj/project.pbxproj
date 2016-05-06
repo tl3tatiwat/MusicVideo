@@ -19,6 +19,7 @@
 		064F2AAC1CD62CF40051E41F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064F2AAA1CD62CF40051E41F /* LaunchScreen.storyboard */; };
 		0679C2271CDAFEA70071C800 /* MusicVideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0679C2261CDAFEA70071C800 /* MusicVideoDetailVC.swift */; };
 		06A24E061CD9B8F200E488D2 /* MusicVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A24E051CD9B8F200E488D2 /* MusicVideoTableViewCell.swift */; };
+		06DE25481CDC4B3B00A9CCA6 /* TouchIdHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE25471CDC4B3B00A9CCA6 /* TouchIdHelper.swift */; };
 		06E8B8E71CDB4B490058DECD /* SettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E8B8E61CDB4B490058DECD /* SettingTVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		064F2AAD1CD62CF40051E41F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0679C2261CDAFEA70071C800 /* MusicVideoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoDetailVC.swift; sourceTree = "<group>"; };
 		06A24E051CD9B8F200E488D2 /* MusicVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTableViewCell.swift; sourceTree = "<group>"; };
+		06DE25471CDC4B3B00A9CCA6 /* TouchIdHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIdHelper.swift; sourceTree = "<group>"; };
 		06E8B8E61CDB4B490058DECD /* SettingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 		06101BB51CD724E00045F946 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				06DE25471CDC4B3B00A9CCA6 /* TouchIdHelper.swift */,
 				06101BB61CD725040045F946 /* Constants.swift */,
 			);
 			name = Utils;
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06101BB41CD702260045F946 /* APIManager.swift in Sources */,
+				06DE25481CDC4B3B00A9CCA6 /* TouchIdHelper.swift in Sources */,
 				0679C2271CDAFEA70071C800 /* MusicVideoDetailVC.swift in Sources */,
 				064F2AA41CD62CF40051E41F /* ViewController.swift in Sources */,
 				06101BB91CD728320045F946 /* MusicVideo.swift in Sources */,
