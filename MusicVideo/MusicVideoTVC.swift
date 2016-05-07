@@ -10,9 +10,9 @@ import UIKit
 
 class MusicVideoTVC: UITableViewController {
     
-    var videos = [Videos]()
+    var videos = [Video]()
     
-    var filterSearch = [Videos]()
+    var filterSearch = [Video]()
     
     let resultSearchController = UISearchController(searchResultsController: nil)
     
@@ -33,7 +33,7 @@ class MusicVideoTVC: UITableViewController {
         
     }
     
-    func didLoadData(videos: [Videos]) {
+    func didLoadData(videos: [Video]) {
         
         self.videos = videos
         
@@ -214,7 +214,7 @@ class MusicVideoTVC: UITableViewController {
         if segue.identifier == storyboard.segueIdentifier {
             if let indexpath = tableView.indexPathForSelectedRow {
                 
-                let video: Videos
+                let video: Video
                 if resultSearchController.active {
                     video = filterSearch[indexpath.row]
                 }
